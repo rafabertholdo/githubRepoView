@@ -9,6 +9,8 @@
 #import "RepositoryTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+static NSString *const kPlaceholderImageName = @"placeholder.png";
+
 @interface RepositoryTableViewCell()
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *repositoryDescription;
@@ -21,6 +23,12 @@
 
 @implementation RepositoryTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.layoutMargins = UIEdgeInsetsZero;
+    self.separatorInset = UIEdgeInsetsZero;
+}
+
 -(void)setupWithModel:(Repository *)model {
     self.name.text = model.name;
     self.repositoryDescription.text = model.repositoryDescription;
@@ -29,7 +37,7 @@
     self.ownerLogin.text = model.owner.login;
     if (model.owner.avatarUrl) {
         [self.ownerAvatar sd_setImageWithURL:[NSURL URLWithString:model.owner.avatarUrl]
-                            placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+                            placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     }
 }
 

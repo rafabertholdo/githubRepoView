@@ -7,23 +7,29 @@
 //
 
 #import "PullRequest.h"
+#import "TypeDefs.h"
+
+static NSString *const kServiceDateFormatter = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+static NSString *const kServiceDateLocale = @"en_US_POSIX";
+static NSString *const kServiceCreatedAt = @"created_at";
+static NSString *const kServiceHtmlUrl = @"html_url";
 
 @implementation PullRequest
 
 + (NSDateFormatter *)dateFormatter {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
-    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:kServiceDateLocale];
+    dateFormatter.dateFormat = kServiceDateFormatter;
     return dateFormatter;
 }
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"user": @"user",
-             @"title": @"title",
-             @"body": @"body",
-             @"createdAt": @"created_at",
-             @"htmlUrl": @"html_url"
+             STR_PROP(user): STR_PROP(user),
+             STR_PROP(title): STR_PROP(title),
+             STR_PROP(body): STR_PROP(body),
+             STR_PROP(createdAt): kServiceCreatedAt,
+             STR_PROP(htmlUrl): kServiceHtmlUrl
              };
 }
 

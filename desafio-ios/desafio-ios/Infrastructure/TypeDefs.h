@@ -12,9 +12,14 @@
 #import "RepositoryList.h"
 #import "PullRequest.h"
 
+#ifndef STR_PROP
+#define STR_PROP( prop ) NSStringFromSelector(@selector(prop))
+#endif
+
 typedef void (^JavaPopCompletion)(RepositoryList *repositoryList, NSError *error);
 typedef void (^PullRequestsCompletion)(NSArray<PullRequest *> *pullRequests, NSError *error);
 typedef void (^ResponseCallbackArray)(NSArray *responseArray, NSError *error);
 typedef void (^ResponseCallbackDictionary)(NSDictionary *response, NSError *error);
+typedef void (^JavaPopControllerCompletion)(void);
 
 #endif /* TypeDefs_h */

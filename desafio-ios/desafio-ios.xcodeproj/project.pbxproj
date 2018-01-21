@@ -10,6 +10,7 @@
 		2ED2F87C00DF5C0C5A3D4621 /* libPods-desafio-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 522124645D0318668ACC801F /* libPods-desafio-iosUITests.a */; };
 		512B43182B26E9A3B17D2DF2 /* libPods-desafio-iosTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9041C31803E3733E0FF52A23 /* libPods-desafio-iosTests.a */; };
 		89A16493ADA3DA18D31B8718 /* libPods-desafio-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 369FE0EEB0B9A5AA7B7FBDFF /* libPods-desafio-ios.a */; };
+		DA08BE002014DBB40071F763 /* UITableView+AtivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DA08BDFF2014DBB40071F763 /* UITableView+AtivityIndicator.m */; };
 		DA27572C201205FE003C19DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA27572B201205FE003C19DD /* AppDelegate.m */; };
 		DA27572F201205FE003C19DD /* JavaPopRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA27572E201205FE003C19DD /* JavaPopRepositoriesViewController.m */; };
 		DA275734201205FE003C19DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA275733201205FE003C19DD /* Assets.xcassets */; };
@@ -56,6 +57,8 @@
 		63CCD63C6598060271859C50 /* Pods-desafio-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosTests/Pods-desafio-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9041C31803E3733E0FF52A23 /* libPods-desafio-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-desafio-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F991AD893C61952544058F /* Pods-desafio-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-desafio-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-desafio-iosUITests/Pods-desafio-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA08BDFE2014DBB40071F763 /* UITableView+AtivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+AtivityIndicator.h"; sourceTree = "<group>"; };
+		DA08BDFF2014DBB40071F763 /* UITableView+AtivityIndicator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+AtivityIndicator.m"; sourceTree = "<group>"; };
 		DA275727201205FE003C19DD /* desafio-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "desafio-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA27572A201205FE003C19DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA27572B201205FE003C19DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				DAFE81882012186700DDBF3C /* RepositoryTableViewCell.m */,
 				DA83779120124857005DFDFB /* PullRequestTableViewCell.h */,
 				DA83779220124857005DFDFB /* PullRequestTableViewCell.m */,
+				DA08BDFE2014DBB40071F763 /* UITableView+AtivityIndicator.h */,
+				DA08BDFF2014DBB40071F763 /* UITableView+AtivityIndicator.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				DAFE818C20121B4100DDBF3C /* Repository.m in Sources */,
 				DA27573A201205FE003C19DD /* main.m in Sources */,
 				DA27572C201205FE003C19DD /* AppDelegate.m in Sources */,
+				DA08BE002014DBB40071F763 /* UITableView+AtivityIndicator.m in Sources */,
 				DAFE81892012186700DDBF3C /* RepositoryTableViewCell.m in Sources */,
 				DA45F541201241E800BAB01C /* PullRequestsViewController.m in Sources */,
 				DA8377A220125421005DFDFB /* RepositoryList.m in Sources */,

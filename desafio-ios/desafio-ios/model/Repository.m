@@ -7,16 +7,21 @@
 //
 
 #import "Repository.h"
+#import "TypeDefs.h"
+
+static NSString *const kSeviceDescription = @"description";
+static NSString *const kSeviceForksCount = @"forks_count";
+static NSString *const kSeviceStargazersCount = @"stargazers_count";
 
 @implementation Repository
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"name": @"name",
-             @"repositoryDescription": @"description",
-             @"forks": @"forks_count",
-             @"stars": @"stargazers_count",
-             @"owner": @"owner"
+             STR_PROP(name): STR_PROP(name),
+             STR_PROP(repositoryDescription): kSeviceDescription,
+             STR_PROP(forks): kSeviceForksCount,
+             STR_PROP(stars): kSeviceStargazersCount,
+             STR_PROP(owner): STR_PROP(owner)
              };
 }
 

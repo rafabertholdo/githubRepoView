@@ -7,12 +7,15 @@
 //
 
 #import "User.h"
+#import "TypeDefs.h"
+
+static NSString *const kSerivceAvatarUrl = @"avatar_url";
 
 @implementation User
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"login": @"login",
-             @"avatarUrl": @"avatar_url"
+             STR_PROP(login): STR_PROP(login),
+             STR_PROP(avatarUrl): kSerivceAvatarUrl
              };
 }
 @end

@@ -7,12 +7,13 @@
 //
 
 #import "RepositoryList.h"
+#import "TypeDefs.h"
 
 @implementation RepositoryList
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"items": @"items"
+             STR_PROP(items): STR_PROP(items)
              };
 }
 

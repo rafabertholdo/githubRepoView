@@ -10,6 +10,11 @@
 #import "PullRequestTableViewCell.h"
 #import "PullRequest.h"
 #import "GithubManager.h"
+#import "UITableView+AtivityIndicator.h"
+
+static CGFloat const kTableViewEstimatedHeight = 135.0f;
+static NSString *const kAlertTitle = @"Error";
+static NSString *const kAlertCancelButtonTitle = @"Ok";
 
 @interface PullRequestsViewController ()
 @property (nonatomic,strong) NSArray<PullRequest *> *dataSource;
@@ -17,16 +22,34 @@
 
 @implementation PullRequestsViewController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.tableView.estimatedRowHeight = kTableViewEstimatedHeight;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] init];
+    self.navigationItem.title = self.repository.name;
+    self.navigationController.navigationBar.topItem.backBarButtonItem = barButton;
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [GithubManager pullRequequestsOfRepository:self.repository completion:^(NSArray<PullRequest *> *pullRequests, NSError *error) {
+    [self.tableView startAnimating];
+    [GithubManager pullRequequestsOfRepository:self.repository
+                                    completion:^(NSArray<PullRequest *> *pullRequests, NSError *error) {
         if (!error) {
             self.dataSource = pullRequests;
             [self.tableView reloadData];
         } else {
-            NSLog(@"Error: %@", error);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kAlertTitle
+                                                            message:error.localizedDescription
+                                                           delegate:nil
+                                                  cancelButtonTitle:kAlertCancelButtonTitle
+                                                  otherButtonTitles:nil];
+            [alert show];
         }
+        [self.tableView stopAnimating];
     }];
 }
 
@@ -40,7 +63,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150.0f;
+    return UITableViewAutomaticDimension;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

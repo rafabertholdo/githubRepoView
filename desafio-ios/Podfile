@@ -9,6 +9,7 @@ target 'desafio-ios' do
   pod 'AFNetwork'
   pod 'Mantle'
   pod 'SDWebImage', '~> 4.0'
+  pod 'TSMarkdownParser'
 
   target 'desafio-iosTests' do
     inherit! :search_paths

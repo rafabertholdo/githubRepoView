@@ -8,6 +8,10 @@
 
 #import "PullRequestTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <TSMarkdownParser/TSMarkdownParser.h>
+
+static NSString *const kPlaceholderImageName = @"placeholder.png";
+static NSString *const kDatePattend = @"dd/MM/YYYY HH:mm:ss";
 
 @interface PullRequestTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *userLogin;
@@ -20,19 +24,26 @@
 
 @implementation PullRequestTableViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.layoutMargins = UIEdgeInsetsZero;
+    self.separatorInset = UIEdgeInsetsZero;
+}
+
 -(void)setupWithModel:(PullRequest *)model {
     self.userLogin.text = model.user.login;
     self.title.text = model.title;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/YYYY HH:mm:ss"];
+    [dateFormatter setDateFormat:kDatePattend];
     self.createdAt.text = [dateFormatter stringFromDate:model.createdAt];
-    self.body.text = model.body;
+    if (model.body) {
+        self.body.attributedText = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:model.body];
+    }
     
     if (model.user.avatarUrl) {
         [self.userAvatar sd_setImageWithURL:[NSURL URLWithString:model.user.avatarUrl]
-                            placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+                           placeholderImage:[UIImage imageNamed:kPlaceholderImageName]];
     }
-    
 }
 
 @end
