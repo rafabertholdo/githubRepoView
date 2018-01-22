@@ -30,7 +30,7 @@ static NSString *const kDatePattend = @"dd/MM/YYYY HH:mm:ss";
     self.separatorInset = UIEdgeInsetsZero;
 }
 
--(void)setupWithModel:(PullRequest *)model {
+- (void)setupWithModel:(PullRequest *)model {
     self.userLogin.text = model.user.login;
     self.title.text = model.title;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

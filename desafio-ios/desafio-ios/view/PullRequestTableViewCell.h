@@ -11,6 +11,10 @@
 
 @interface PullRequestTableViewCell : UITableViewCell
 
--(void)setupWithModel:(PullRequest *)model;
+/**
+ * Define os dados na célula de pull request a partir do modelo
+ * @param model modelo do pull request
+ */
+- (void)setupWithModel:(PullRequest *)model;
 
 @end

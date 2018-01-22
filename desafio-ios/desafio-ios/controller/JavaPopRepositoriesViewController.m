@@ -32,6 +32,7 @@ static NSString *const kAlertCancelButtonTitle = @"Ok";
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView startAnimating];
     [self loadNextPage:^{
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [self.tableView stopAnimating];
     }];
 }
@@ -58,26 +59,26 @@ static NSString *const kAlertCancelButtonTitle = @"Ok";
     }];
 }
 
--(NSMutableArray<Repository *> *)dataSource {
+- (NSMutableArray<Repository *> *)dataSource {
     if (!_dataSource) {
         _dataSource = [NSMutableArray<Repository *> new];
     }
     return _dataSource;
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RepositoryTableViewCell *cell = (RepositoryTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RepositoryTableViewCell class])];
     Repository* model = self.dataSource[indexPath.row];
     [cell setupWithModel:model];

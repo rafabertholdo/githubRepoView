@@ -11,7 +11,18 @@
 
 @interface GithubManager : NSObject
 
+/**
+ * Busca do serviço a lista dos repostórios java ordenados por número de estrelas
+ * @param page página da requisição
+ * @completion callback da requisição
+ */
 + (void)javaPopRepositoryListWithPage:(int)page completion:(JavaPopCompletion)completion;
+
+/**
+ * Busca do serviço a lista de pull requests de um determinado repositório
+ * @param repository modelo do repositório
+ * @param completion callback da requisição
+ */
 + (void)pullRequequestsOfRepository:(Repository *)repository completion:(PullRequestsCompletion)completion;
 
 @end

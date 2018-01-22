@@ -9,9 +9,16 @@
 @import Foundation;
 @import UIKit;
 
-@interface UIView (AtivityIndicator)
+@interface UITableView (AtivityIndicator)
 
+/**
+ * Insere um Activity Indicator na tableview
+ */
 - (void)startAnimating;
+
+/**
+ * Para a animação e esconde o Activity Indicator
+ */
 - (void)stopAnimating;
 
 @end

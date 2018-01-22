@@ -15,6 +15,9 @@
 static CGFloat const kTableViewEstimatedHeight = 135.0f;
 static NSString *const kAlertTitle = @"Error";
 static NSString *const kAlertCancelButtonTitle = @"Ok";
+static NSString *const kEmptyStateMessage = @"No pull requests for this repository";
+static NSString *const kEmptyStateFontName = @"Apple SD Gothic Neo";
+static CGFloat const kEmptyStateFontSize = 15;
 
 @interface PullRequestsViewController ()
 @property (nonatomic,strong) NSArray<PullRequest *> *dataSource;
@@ -55,14 +58,34 @@ static NSString *const kAlertCancelButtonTitle = @"Ok";
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    if (!self.dataSource) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        return 0;
+    }
+
+    NSInteger numOfSections = 0;
+    if (self.dataSource.count) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        numOfSections = 1;
+        self.tableView.backgroundView = nil;
+    } else {
+        UILabel *emptyStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, self.tableView.bounds.size.height)];
+        emptyStateLabel.text = kEmptyStateMessage;
+        emptyStateLabel.textColor = [UIColor blackColor];
+        emptyStateLabel.textAlignment = NSTextAlignmentCenter;
+        emptyStateLabel.font = [UIFont fontWithName:kEmptyStateFontName size:kEmptyStateFontSize];
+        self.tableView.backgroundView = emptyStateLabel;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    
+    return numOfSections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 

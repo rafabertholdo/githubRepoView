@@ -29,7 +29,7 @@ static NSString *const kPlaceholderImageName = @"placeholder.png";
     self.separatorInset = UIEdgeInsetsZero;
 }
 
--(void)setupWithModel:(Repository *)model {
+- (void)setupWithModel:(Repository *)model {
     self.name.text = model.name;
     self.repositoryDescription.text = model.repositoryDescription;
     self.forks.text = @(model.forks).stringValue;

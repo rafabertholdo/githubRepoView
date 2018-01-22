@@ -10,6 +10,8 @@
 
 static NSString *const kJavaPopUrl = @"https://api.github.com/search/repositories?q=language:Java&sort=stars&page=%d";
 static NSString *const kPullRequestsUrl = @"https://api.github.com/repos/%@/%@/pulls";
+static NSString *const kUnexpectedServiceResultMessage = @"Unexpected service result";
+static NSString *const kErrorDomain = @"GithubDomain";
 
 @implementation GithubProvider
 
@@ -22,7 +24,7 @@ static NSString *const kPullRequestsUrl = @"https://api.github.com/repos/%@/%@/p
              if ([responseObject isKindOfClass:[NSDictionary class]]) {
                  completion((NSDictionary *)responseObject, nil);
              } else {
-                 completion(nil,nil);
+                 completion(nil, [NSError errorWithDomain:kErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : kUnexpectedServiceResultMessage }]);
              }
          }
          failure:^(NSURLSessionTask *operation, NSError *error) {
@@ -45,7 +47,7 @@ static NSString *const kPullRequestsUrl = @"https://api.github.com/repos/%@/%@/p
              if ([responseObject isKindOfClass:[NSArray class]]) {
                  completion((NSArray *)responseObject, nil);
              } else {
-                 completion(nil,nil);
+                 completion(nil, [NSError errorWithDomain:kErrorDomain code:1 userInfo:@{NSLocalizedDescriptionKey : kUnexpectedServiceResultMessage }]);
              }
          }
          failure:^(NSURLSessionTask *operation, NSError *error) {

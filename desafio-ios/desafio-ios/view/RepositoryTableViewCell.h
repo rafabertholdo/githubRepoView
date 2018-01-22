@@ -11,6 +11,10 @@
 
 @interface RepositoryTableViewCell : UITableViewCell
 
--(void)setupWithModel:(Repository *)model;
+/**
+ * Define os dados na célula de repositório a partir do modelo
+ * @param model modelo do repositório
+ */
+- (void)setupWithModel:(Repository *)model;
 
 @end
