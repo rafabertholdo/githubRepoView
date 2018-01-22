@@ -13,7 +13,6 @@
 @property (nonatomic, strong) id associatedObject;
 @end
 
-
 @implementation UITableView (AtivityIndicator)
 
 - (void)setAssociatedObject:(id)object {

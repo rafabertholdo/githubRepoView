@@ -15,17 +15,18 @@
 		DA27572F201205FE003C19DD /* JavaPopRepositoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA27572E201205FE003C19DD /* JavaPopRepositoriesViewController.m */; };
 		DA275734201205FE003C19DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA275733201205FE003C19DD /* Assets.xcassets */; };
 		DA27573A201205FE003C19DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA275739201205FE003C19DD /* main.m */; };
-		DA275744201205FE003C19DD /* desafio_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA275743201205FE003C19DD /* desafio_iosTests.m */; };
 		DA27574F201205FE003C19DD /* desafio_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA27574E201205FE003C19DD /* desafio_iosUITests.m */; };
 		DA45F53D20121E7400BAB01C /* JavaPopRepositories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA45F53C20121E7400BAB01C /* JavaPopRepositories.storyboard */; };
 		DA45F541201241E800BAB01C /* PullRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA45F540201241E800BAB01C /* PullRequestsViewController.m */; };
 		DA45F544201242EB00BAB01C /* ControlFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = DA45F543201242EB00BAB01C /* ControlFlow.m */; };
+		DA641C0A20168C1300BF5108 /* GithubProviderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA641C0920168C1300BF5108 /* GithubProviderTest.m */; };
 		DA83779320124857005DFDFB /* PullRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DA83779220124857005DFDFB /* PullRequestTableViewCell.m */; };
 		DA837796201248D7005DFDFB /* PullRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA837795201248D7005DFDFB /* PullRequest.m */; };
 		DA83779F2012522E005DFDFB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DA83779E2012522E005DFDFB /* User.m */; };
 		DA8377A220125421005DFDFB /* RepositoryList.m in Sources */ = {isa = PBXBuildFile; fileRef = DA8377A120125421005DFDFB /* RepositoryList.m */; };
 		DAB82C6A201273E900DDE7AC /* GithubProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB82C69201273E900DDE7AC /* GithubProvider.m */; };
 		DAB82C6D201278DB00DDE7AC /* GithubManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAB82C6C201278DB00DDE7AC /* GithubManager.m */; };
+		DABBE8332016969A00181469 /* GithubManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DABBE8322016969A00181469 /* GithubManagerTest.m */; };
 		DAFE81892012186700DDBF3C /* RepositoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFE81882012186700DDBF3C /* RepositoryTableViewCell.m */; };
 		DAFE818C20121B4100DDBF3C /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFE818B20121B4100DDBF3C /* Repository.m */; };
 /* End PBXBuildFile section */
@@ -68,7 +69,6 @@
 		DA275738201205FE003C19DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA275739201205FE003C19DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA27573F201205FE003C19DD /* desafio-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA275743201205FE003C19DD /* desafio_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = desafio_iosTests.m; sourceTree = "<group>"; };
 		DA275745201205FE003C19DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA27574A201205FE003C19DD /* desafio-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "desafio-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA27574E201205FE003C19DD /* desafio_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = desafio_iosUITests.m; sourceTree = "<group>"; };
@@ -79,6 +79,7 @@
 		DA45F540201241E800BAB01C /* PullRequestsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullRequestsViewController.m; sourceTree = "<group>"; };
 		DA45F542201242EB00BAB01C /* ControlFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlFlow.h; sourceTree = "<group>"; };
 		DA45F543201242EB00BAB01C /* ControlFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlFlow.m; sourceTree = "<group>"; };
+		DA641C0920168C1300BF5108 /* GithubProviderTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithubProviderTest.m; sourceTree = "<group>"; };
 		DA83779120124857005DFDFB /* PullRequestTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullRequestTableViewCell.h; sourceTree = "<group>"; };
 		DA83779220124857005DFDFB /* PullRequestTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PullRequestTableViewCell.m; sourceTree = "<group>"; };
 		DA837794201248D7005DFDFB /* PullRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullRequest.h; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		DAB82C6B201278DB00DDE7AC /* GithubManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GithubManager.h; sourceTree = "<group>"; };
 		DAB82C6C201278DB00DDE7AC /* GithubManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithubManager.m; sourceTree = "<group>"; };
 		DAB82C6E20127B4B00DDE7AC /* TypeDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeDefs.h; sourceTree = "<group>"; };
+		DABBE8322016969A00181469 /* GithubManagerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GithubManagerTest.m; sourceTree = "<group>"; };
 		DAFE81872012186700DDBF3C /* RepositoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RepositoryTableViewCell.h; sourceTree = "<group>"; };
 		DAFE81882012186700DDBF3C /* RepositoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepositoryTableViewCell.m; sourceTree = "<group>"; };
 		DAFE818A20121B4100DDBF3C /* Repository.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -190,8 +192,9 @@
 		DA275742201205FE003C19DD /* desafio-iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA275743201205FE003C19DD /* desafio_iosTests.m */,
 				DA275745201205FE003C19DD /* Info.plist */,
+				DA641C0920168C1300BF5108 /* GithubProviderTest.m */,
+				DABBE8322016969A00181469 /* GithubManagerTest.m */,
 			);
 			path = "desafio-iosTests";
 			sourceTree = "<group>";
@@ -569,7 +572,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA275744201205FE003C19DD /* desafio_iosTests.m in Sources */,
+				DABBE8332016969A00181469 /* GithubManagerTest.m in Sources */,
+				DA641C0A20168C1300BF5108 /* GithubProviderTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "GithubProvider.h"
+#import "AFHTTPSessionManager.h"
 
 static NSString *const kJavaPopUrl = @"https://api.github.com/search/repositories?q=language:Java&sort=stars&page=%d";
 static NSString *const kPullRequestsUrl = @"https://api.github.com/repos/%@/%@/pulls";
