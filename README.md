@@ -1,4 +1,4 @@
-# Splicativo de consulta a API do [GitHub](https://github.com)#
+# Aplicativo de consulta a API do [GitHub](https://github.com)#
 
 Um aplicativo para consultar a [API do GitHub](https://developer.github.com/v3/) e trazer os repositórios mais populares de Java. 
 
